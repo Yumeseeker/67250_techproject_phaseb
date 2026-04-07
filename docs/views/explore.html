@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Brian Zhang">
+  <meta name="keywords" content="MonoMuse, tea museum, Pittsburgh, about, directions, membership, donations">
+  <meta name="description" content="About MonoMuse Tea Museum — visitor information, directions, membership tiers, and our mission to tell the world's tea story.">
+  <title>MonoMuse Tea Museum — Explore</title>
+
+  <!-- Google Fonts: Cormorant Garamond + Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet 1.9.4 — BSD 2-Clause License — https://leafletjs.com
+       Map tiles: OpenStreetMap contributors — ODbL — https://www.openstreetmap.org/copyright -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="../static/style.css">
+
+  <!-- Leaflet JS must load before our script.js so the L global is available -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../static/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="../index.html" aria-label="MonoMuse Tea Museum — home">
+      <img id="logo" src="../static/images/new-tea-logo.png" alt="MonoMuse Tea Museum Logo">
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav_bar" aria-label="Main navigation">
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="tickets.html">Tickets</a>
+      <a href="checkout.html" class="nav-cta">Buy Tickets</a>
+    </div>
+    <button type="button" class="hamburger" id="hamburger-btn"
+            aria-controls="nav-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- PAGE TITLE -->
+    <div style="margin-bottom: 2.5rem;">
+      <h1>Explore MonoMuse</h1>
+    </div>
+
+    <!-- MUSEUM OVERVIEW -->
+    <section class="explore-content" aria-label="About MonoMuse Tea Museum">
+      <div>
+        <h2>A Museum Built Around One Leaf</h2>
+        <p>Every civilization on earth has a tea story. A clay pot simmering in a Yunnan village.
+           A cast-iron kettle rattling on a Kyoto stove. A street vendor outside a Kolkata tram stop,
+           pouring chai from a spectacular height. A Moroccan host pressing glass after glass of mint
+           on a traveler who hadn't expected to stay.</p>
+        <p>MonoMuse is a museum built around that simple, staggering fact: that a single leaf —
+           <em>Camellia sinensis</em> — wound its way through six continents, ten thousand years of
+           history, and the daily rituals of four billion people. We think that deserves more than a
+           Wikipedia page.</p>
+        <p>Spread across three floors and more than 8,000 square feet in the heart of Pittsburgh's
+           Cultural District, MonoMuse presents the global story of tea through permanent collections,
+           rotating exhibitions, immersive tasting rooms, a research library, and a working tea bar
+           where you can drink your way through the curriculum.</p>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">What We Offer</h3>
+        <ul>
+          <li>Rotating and permanent tea exhibitions across three floors</li>
+          <li>Immersive tasting rooms for six major tea traditions</li>
+          <li>A working tea bar open during all museum hours</li>
+          <li>A research library — the most comprehensive tea collection in North America</li>
+          <li>Education programs and outreach to Pittsburgh-area schools</li>
+        </ul>
+      </div>
+
+      <div>
+        <img class="card-img"
+             src="../static/images/tea-bar.jpg"
+             alt="MonoMuse tea bar interior on Floor 1"
+             style="height: 300px; border-radius: 3px; margin-bottom: 1.5rem;"
+             loading="lazy">
+
+        <h3 style="margin-bottom: 0.75rem;">Accessibility</h3>
+        <p>Fully accessible: step-free entrance, elevator to all floors, accessible restrooms on
+           every level. Assisted listening devices available at the front desk. Large-print guides
+           on request. Service animals welcome.</p>
+      </div>
+    </section>
+
+    <!-- VISITOR INFORMATION -->
+    <section aria-label="Visitor information — hours, admission, contact" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Visitor Information</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Museum Hours</h3>
+          <p>
+            Tue &ndash; Fri: 10:00 am &ndash; 6:00 pm<br>
+            Saturday: 9:00 am &ndash; 8:00 pm<br>
+            Sunday: 10:00 am &ndash; 5:00 pm<br>
+            <strong>Monday: Closed</strong>
+          </p>
+          <p style="font-size: 0.82rem; color: var(--color-clay); margin-top: 0.5rem;">
+            Last entry 45 min before closing.
+            Tea Bar closes 30 min before the museum.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Admission</h3>
+          <p>
+            General (Adult): $18<br>
+            Student (valid ID): $10<br>
+            Youth (ages 5&ndash;17): $8<br>
+            Children under 5: Free<br>
+            Seniors (65+): $12<br>
+            Members: Free (all tiers)
+          </p>
+        </div>
+        <div class="info-card" id="contact">
+          <h3>Contact</h3>
+          <p>
+            hello@monomuse.org<br>
+            groups@monomuse.org<br><br>
+            142 Meridian Street<br>
+            Pittsburgh, PA 15222
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Special Exhibitions</h3>
+          <p>
+            Some exhibitions require a supplemental ticket.
+            Online purchase guarantees entry on busy weekends — we recommend it.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <a href="tickets.html">View ticket pricing &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMBEDDED VIDEO -->
+    <section class="video-section" aria-label="Museum video feature">
+      <div class="section-heading">
+        <h2>Inside MonoMuse</h2>
+        <div class="divider"></div>
+      </div>
+      <p style="text-align:center; color: var(--color-clay); margin-bottom: 1.5rem; font-weight: 300;">
+        A brief introduction to our galleries, tasting rooms, and the story we&rsquo;re here to tell.
+      </p>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/fmukjUoevf4"
+          title="Japanese Chado Matcha Green Tea Ceremony #TeaStories | TEALEAVES"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <!-- Video: "Japanese Chado Matcha Green Tea Ceremony #TeaStories | TEALEAVES" by TEALEAVES. Free to embed via YouTube. -->
+      </div>
+    </section>
+
+    <!-- DIRECTIONS / MAP (Leaflet API) -->
+    <section class="map-section" aria-label="Directions and map" id="directions">
+      <div class="section-heading">
+        <h2>Find Us</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="info-grid" style="margin-bottom: 1.5rem;">
+        <div class="info-card">
+          <h3>Address</h3>
+          <p>
+            MonoMuse Tea Museum<br>
+            142 Meridian Street<br>
+            Pittsburgh, PA 15222
+          </p>
+          <p style="font-size: 0.82rem; color: var(--color-clay); margin-top: 0.5rem;">
+            Located in the Cultural District.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>By Transit</h3>
+          <p>Wood Street light rail station — 5-minute walk. Bus lines 61A and 61B stop on
+             Penn Avenue, one block south.</p>
+        </div>
+        <div class="info-card">
+          <h3>By Car</h3>
+          <p>Street parking on Meridian and surrounding blocks. Cultural District Garage on
+             7th Avenue offers validated parking — ask at the front desk for a voucher.</p>
+        </div>
+        <div class="info-card">
+          <h3>By Bike</h3>
+          <p>Secure bicycle parking in the rear courtyard, accessible from Liberty Avenue alley.</p>
+        </div>
+      </div>
+
+      <!--
+        Leaflet / OpenStreetMap integration.
+        Coordinates: 40.4462, -79.9990 — Cultural District, Pittsburgh PA.
+      -->
+      <div id="map" aria-label="Interactive map showing MonoMuse Tea Museum location"></div>
+      <p style="font-size: 0.78rem; color: var(--color-clay); margin-top: 0.5rem; text-align: center;">
+        Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors
+      </p>
+    </section>
+
+    <!-- MEMBERSHIP & DONATIONS -->
+    <section id="membership" aria-label="Membership tiers and donations" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Become a Part of MonoMuse</h2>
+        <div class="divider"></div>
+      </div>
+
+      <p style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem; color: var(--color-clay); font-weight: 300;">
+        Museums are only as alive as the communities that sustain them. A MonoMuse membership
+        means free entry every day we&rsquo;re open, early access to every new exhibition, and the
+        knowledge that you&rsquo;re helping keep one of the more unusual and necessary institutions
+        in this city running.
+      </p>
+
+      <!-- Membership tiers table -->
+      <div class="table-wrap" style="margin-bottom: 2rem;">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Tier</th>
+              <th scope="col">Annual Price</th>
+              <th scope="col">Key Benefits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Steeper</strong></td>
+              <td>$65</td>
+              <td>Free admission (1 person), 10% off Tea Bar &amp; shop, monthly newsletter</td>
+            </tr>
+            <tr>
+              <td><strong>Garden</strong></td>
+              <td>$120</td>
+              <td>Free admission (2 people), 10% off Tea Bar &amp; shop, members-only exhibition previews</td>
+            </tr>
+            <tr>
+              <td><strong>Reserve</strong></td>
+              <td>$250</td>
+              <td>Everything in Garden + 4 guest passes/year, curator-led tours, recognition in annual report</td>
+            </tr>
+            <tr>
+              <td><strong>Patron</strong></td>
+              <td>$600</td>
+              <td>Everything in Reserve + private group tasting (up to 6 guests), 20% gift shop discount, director&rsquo;s personal thanks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <a href="checkout.html" class="btn btn-gold">Join as a Member &rarr;</a>
+      </div>
+
+      <!-- Donations -->
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 2rem; max-width: 640px; margin: 0 auto;">
+        <h3 style="margin-bottom: 0.75rem;">Donations</h3>
+        <p style="font-family: var(--ff-serif); font-size: 1.15rem; font-weight: 500; color: var(--color-deep-forest); margin-bottom: 0.75rem;">
+          Not ready for membership?
+        </p>
+        <p>A one-time donation of any amount goes directly toward our exhibition program,
+           education outreach in Pittsburgh schools, and our ongoing effort to build the most
+           comprehensive tea research library in North America.</p>
+        <a href="checkout.html" class="btn btn-dark" style="margin-top: 0.5rem;">
+          Make a Donation &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="copyYear"></p>
+    <p style="margin-top: 0.4rem;">
+      <a href="../index.html">Home</a> &middot;
+      <a href="tickets.html">Tickets</a> &middot;
+      <a href="exhibitions.html">Exhibitions</a> &middot;
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
+
+</div><!-- /container -->
+
+</body>
+</html>
