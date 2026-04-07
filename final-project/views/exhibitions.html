@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Brian Zhang">
+  <meta name="keywords" content="tea exhibitions, MonoMuse, Japanese tea, Pu-erh, Chai, cold brew, museum">
+  <meta name="description" content="Current and upcoming exhibitions at MonoMuse Tea Museum — exploring the global story of tea through history, culture, and ceremony.">
+  <title>MonoMuse Tea Museum — Exhibitions</title>
+
+  <!-- Google Fonts: Cormorant Garamond + Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../static/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="../index.html" aria-label="MonoMuse Tea Museum — home">
+      <img id="logo" src="../static/images/new-tea-logo.png" alt="MonoMuse Tea Museum Logo">
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav_bar" aria-label="Main navigation">
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="tickets.html">Tickets</a>
+      <a href="checkout.html" class="nav-cta">Buy Tickets</a>
+    </div>
+    <button type="button" class="hamburger" id="hamburger-btn"
+            aria-controls="nav-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <h1 style="margin-bottom: 0.5rem;">Current &amp; Upcoming Exhibitions</h1>
+    <p style="color: var(--color-clay); margin-bottom: 2.5rem;">
+      Three floors of permanent collections, rotating exhibitions, and immersive tasting
+      rooms — all in service of one leaf's journey through the world.
+    </p>
+
+    <!-- GALLERY / SLIDESHOW -->
+    <section aria-label="Exhibition highlights slideshow" style="margin-bottom: 3rem;">
+      <div class="gallery-container" id="gallery" role="region" aria-label="Exhibitions image slideshow — use arrow keys or buttons to navigate">
+        <div class="gallery-slides">
+          <div class="slide active">
+            <img src="../static/images/wabi-cha.jpg"
+                 alt="Wabi-cha tea room interior for Leaf, Steam, Ceremony exhibition"
+                 loading="lazy">
+            <p class="slide-caption"><em>Leaf, Steam, Ceremony</em> &mdash; The Japanese Tea Tradition</p>
+          </div>
+          <div class="slide">
+            <img src="../static/images/chinese-puer.jpg"
+                 alt="Chinese Pu-erh tea cakes and archive display"
+                 loading="lazy">
+            <p class="slide-caption"><em>The Pu-erh Files</em> &mdash; Yunnan&rsquo;s Living Teas</p>
+          </div>
+          <div class="slide">
+            <img src="../static/images/chai-make.jpg"
+                 alt="Chai being prepared in a traditional tea service"
+                 loading="lazy">
+            <p class="slide-caption"><em>Chai Nation</em> &mdash; Tea and Identity on the Indian Subcontinent</p>
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <button type="button" id="prevSlide" aria-label="Previous slide">&#8592;</button>
+          <span id="slideIndicator" aria-live="polite">1 / 3</span>
+          <button type="button" id="nextSlide" aria-label="Next slide">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOW ON VIEW -->
+    <section aria-label="Current exhibitions" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Now On View</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- Exhibition 1: Leaf, Steam, Ceremony -->
+        <article class="card">
+          <img class="card-img"
+               src="../static/images/sen_no_rikyu.jpg"
+               alt="Portrait and historical context image for Sen no Rikyu"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta">
+              <span class="badge badge-green">On Now</span>
+              &ensp;Gallery A, Floor 1 &middot; Through Sept 14
+            </p>
+            <h3><em>Leaf, Steam, Ceremony</em></h3>
+            <p style="color: var(--color-clay); font-size: 0.88rem; margin-bottom: 0.75rem;">
+              The Japanese Tea Tradition
+            </p>
+            <p>Through archival photographs, reconstructed tea room architecture, and rare implements
+               on loan from Kyoto collectors, this exhibition traces the arc from Tang Dynasty imports
+               to the formalization of <em>chado</em> — the Way of Tea — under Sen no Rikyu in the
+               16th century.</p>
+            <p>The centerpiece is a full-scale replica of a wabi-cha tearoom, where visitors can
+               observe live demonstrations and, on select weekends, participate in abbreviated tea
+               ceremonies led by certified practitioners.</p>
+            <a href="checkout.html" class="btn btn-primary" style="margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1.1rem;">
+              Buy Tickets
+            </a>
+          </div>
+        </article>
+
+        <!-- Exhibition 2: The Pu-erh Files -->
+        <article class="card">
+          <img class="card-img"
+               src="../static/images/puer.jpg"
+               alt="Aged Pu-erh tea cakes displayed in archive"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta">
+              <span class="badge badge-dark">On Now</span>
+              &ensp;Gallery B, Floor 2 &middot; Through Nov 2
+            </p>
+            <h3><em>The Pu-erh Files</em></h3>
+            <p style="color: var(--color-clay); font-size: 0.88rem; margin-bottom: 0.75rem;">
+              Yunnan&rsquo;s Living Teas
+            </p>
+            <p>Pu-erh is the only tea in the world that improves with age — some cakes sell for more
+               than a bottle of first-growth Bordeaux. This exhibition examines the compressed,
+               fermented dark teas of Yunnan Province through the lens of terroir, trade, and time.</p>
+            <p>Interactive displays let visitors compare the flavor profiles of teas aged 5, 15, and
+               30 years. A climate-controlled archive room showcases historic tea cakes dating to the 1980s.</p>
+            <a href="checkout.html" class="btn btn-primary" style="margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1.1rem;">
+              Buy Tickets
+            </a>
+          </div>
+        </article>
+
+        <!-- Exhibition 3: Chai Nation -->
+        <article class="card">
+          <img class="card-img"
+               src="../static/images/chai.jpg"
+               alt="Chai preparation and street tea culture"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta">
+              <span class="badge badge-gold">On Now</span>
+              &ensp;Gallery C, Floor 2 &middot; Through Dec 7
+            </p>
+            <h3><em>Chai Nation</em></h3>
+            <p style="color: var(--color-clay); font-size: 0.88rem; margin-bottom: 0.75rem;">
+              Tea and Identity on the Indian Subcontinent
+            </p>
+            <p>From the British colonial project that turned Assam into a tea-producing giant to the
+               street chai wallahs who reclaimed the beverage and made it their own — this exhibition
+               is about who gets to define a drink's meaning.</p>
+            <p>Featuring oral histories, vintage railway menus, advertising ephemera, and a working
+               chai station where visitors can taste four distinct regional preparations.</p>
+            <a href="checkout.html" class="btn btn-primary" style="margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1.1rem;">
+              Buy Tickets
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section aria-label="Upcoming exhibitions" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Coming Soon</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- Exhibition 4: The Cold Steep -->
+        <article class="card">
+          <img class="card-img"
+               src="../static/images/bubble.jpg"
+               alt="Bubble tea and modern tea café culture"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta">
+              <span class="badge badge-green">Opening Jan 18</span>
+              &ensp;Gallery D, Floor 3
+            </p>
+            <h3><em>The Cold Steep</em></h3>
+            <p style="color: var(--color-clay); font-size: 0.88rem; margin-bottom: 0.75rem;">
+              Modern Tea Culture in East Asia and Beyond
+            </p>
+            <p>An examination of how younger generations across Taiwan, Korea, and the diaspora are
+               reinventing tea culture: bubble tea as social architecture, cold brew as daily ritual,
+               specialty tea cafés as third places.</p>
+            <p>Features commissioned photography, interviews with tea entrepreneurs, and an
+               interactive map of the global specialty tea scene.</p>
+            <p style="font-size: 0.82rem; color: var(--color-clay); margin-top: 0.5rem;">
+              Members-only preview: January 15. <a href="explore.html#membership">Join to attend.</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <p style="margin-bottom: 1rem; color: var(--color-clay);">
+        Online purchase guarantees entry — especially useful on busy weekends.
+      </p>
+      <a href="tickets.html" class="btn btn-dark">View Ticket Pricing</a>
+      &nbsp;
+      <a href="checkout.html" class="btn btn-primary">Buy Tickets Now</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="copyYear"></p>
+    <p style="margin-top: 0.4rem;">
+      <a href="../index.html">Home</a> &middot;
+      <a href="tickets.html">Tickets</a> &middot;
+      <a href="explore.html">About</a> &middot;
+      <a href="explore.html#directions">Directions</a>
+    </p>
+  </footer>
+
+</div><!-- /container -->
+
+</body>
+</html>

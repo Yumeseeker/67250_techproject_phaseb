@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Brian Zhang">
+  <meta name="keywords" content="MonoMuse, tea museum, buy tickets, checkout, order">
+  <meta name="description" content="Buy tickets to MonoMuse Tea Museum — secure your entry online in about two minutes.">
+  <title>MonoMuse Tea Museum — Checkout</title>
+
+  <!-- Google Fonts: Cormorant Garamond + Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../static/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="../index.html" aria-label="MonoMuse Tea Museum — home">
+      <img id="logo" src="../static/images/new-tea-logo.png" alt="MonoMuse Tea Museum Logo">
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav_bar" aria-label="Main navigation">
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="tickets.html">Tickets</a>
+      <a href="checkout.html" class="nav-cta">Buy Tickets</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn"
+            aria-controls="nav-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="checkout-wrapper">
+
+      <!-- CHECKOUT FORM -->
+      <form id="checkout-form" novalidate aria-label="Ticket purchase form">
+        <h1>Secure Your Ticket</h1>
+        <p style="color: var(--color-clay); margin-bottom: 2rem; font-size: 0.95rem; font-weight: 300;">
+          Book online, skip the queue. Purchasing in advance takes about two minutes and guarantees
+          your entry. This is a simulated checkout — no payment is processed.
+        </p>
+
+        <!-- Visit Date (required) -->
+        <div class="form-group">
+          <label for="visit-date">
+            Visit Date <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input type="date" id="visit-date" name="visit-date"
+                 required aria-required="true"
+                 aria-describedby="err-visit-date"
+                 min="2026-01-01">
+          <span class="error-msg" id="err-visit-date" role="alert">
+            Please select a visit date.
+          </span>
+        </div>
+
+        <!-- Ticket Type (required) -->
+        <div class="form-group">
+          <label for="ticket-type">
+            Ticket Type <span class="req" aria-hidden="true">*</span>
+          </label>
+          <select id="ticket-type" name="ticket-type"
+                  required aria-required="true"
+                  aria-describedby="err-ticket-type">
+            <option value="">— Select a ticket type —</option>
+            <option value="general">General Admission — $18.00</option>
+            <option value="student">Student — $10.00 (valid ID required)</option>
+            <option value="member">Member — Free (membership card required)</option>
+          </select>
+          <span class="error-msg" id="err-ticket-type" role="alert">
+            Please select a ticket type.
+          </span>
+        </div>
+
+        <!-- Quantity (required, 1–10) -->
+        <div class="form-group">
+          <label for="quantity">
+            Quantity <span class="req" aria-hidden="true">*</span>
+            <span style="font-weight: 300; color: var(--color-clay); text-transform: none; letter-spacing: 0;">(1 – 10)</span>
+          </label>
+          <input type="number" id="quantity" name="quantity"
+                 required aria-required="true"
+                 min="1" max="10" value=""
+                 placeholder="Enter quantity (1–10)"
+                 aria-describedby="err-quantity">
+          <span class="error-msg" id="err-quantity" role="alert">
+            Please enter a quantity between 1 and 10.
+          </span>
+        </div>
+
+        <!-- Auto-updating Total -->
+        <div class="total-display" aria-live="polite" aria-label="Order total">
+          <span class="total-label">Estimated Total</span>
+          <span class="total-amount" id="total-amount">$0.00</span>
+        </div>
+        <p style="font-size: 0.78rem; color: var(--color-clay); margin-bottom: 1.5rem; margin-top: -1rem; font-weight: 300;">
+          Total updates automatically based on ticket type and quantity.
+        </p>
+
+        <!-- Email (required) -->
+        <div class="form-group">
+          <label for="email">
+            Email Address <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input type="email" id="email" name="email"
+                 required aria-required="true"
+                 placeholder="you@example.com"
+                 autocomplete="email"
+                 aria-describedby="err-email">
+          <span class="error-msg" id="err-email" role="alert">
+            Please enter a valid email address.
+          </span>
+        </div>
+
+        <!-- Zip Code (optional) -->
+        <div class="form-group">
+          <label for="zip">
+            Zip Code
+            <span style="font-weight: 300; color: var(--color-clay); text-transform: none; letter-spacing: 0;">(optional)</span>
+          </label>
+          <input type="text" id="zip" name="zip"
+                 inputmode="numeric"
+                 maxlength="5"
+                 placeholder="e.g. 15222"
+                 autocomplete="postal-code"
+                 aria-describedby="err-zip">
+          <span class="error-msg" id="err-zip" role="alert">
+            Zip code must be exactly 5 digits.
+          </span>
+        </div>
+
+        <!-- Mailing List Checkbox -->
+        <div class="checkbox-group">
+          <input type="checkbox" id="mailing-list" name="mailing-list">
+          <label for="mailing-list">
+            Sign me up for exhibition news, member offers, and tea programming updates
+          </label>
+        </div>
+
+        <!-- Place Order -->
+        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 0.875rem; min-height: 52px;">
+          Place Order
+        </button>
+
+        <p style="font-size: 0.78rem; color: var(--color-clay); margin-top: 0.75rem; text-align: center; font-weight: 300;">
+          Tickets are valid only for the selected date. Exchanges available up to 24 hours before your visit.
+        </p>
+      </form>
+
+      <!-- CONFIRMATION SECTION (hidden until valid form submission) -->
+      <div id="confirmation-section" role="alert" aria-live="polite">
+        <span class="confirm-icon" aria-hidden="true">&#10003;</span>
+        <h2>Order Confirmed</h2>
+        <p>Thank you for purchasing tickets to MonoMuse Tea Museum. Your confirmation is your
+           ticket — show it on your phone or print it at home. We look forward to welcoming you.</p>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 1.5rem; margin: 1.5rem 0; text-align: left;">
+          <h3 style="margin-bottom: 1rem;">Order Summary</h3>
+          <table style="width: 100%; font-size: 0.9rem;">
+            <tbody>
+              <tr>
+                <td style="padding: 0.4rem 0; color: var(--color-clay); border: none; font-weight: 300;">Visit Date</td>
+                <td style="padding: 0.4rem 0; text-align: right; border: none;" id="confirm-date">—</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.4rem 0; color: var(--color-clay); border: none; font-weight: 300;">Ticket Type</td>
+                <td style="padding: 0.4rem 0; text-align: right; border: none;" id="confirm-type">—</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.4rem 0; color: var(--color-clay); border: none; font-weight: 300;">Quantity</td>
+                <td style="padding: 0.4rem 0; text-align: right; border: none;" id="confirm-qty">—</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.75rem 0 0.4rem; font-weight: 500; border: none; border-top: 1px solid var(--border);">Total</td>
+                <td style="padding: 0.75rem 0 0.4rem; text-align: right; font-weight: 500; border: none; border-top: 1px solid var(--border);">
+                  <span class="confirm-total" id="confirm-total">—</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="color: var(--color-clay); font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 300;">
+          A confirmation will be sent to the email address you provided.
+          Please bring this confirmation and a valid photo ID to the museum.
+        </p>
+
+        <a href="../index.html" class="btn btn-dark">Return to Home</a>
+        &nbsp;
+        <a href="exhibitions.html" class="btn btn-primary">View Exhibitions</a>
+      </div>
+
+    </div><!-- /checkout-wrapper -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="copyYear"></p>
+    <p style="margin-top: 0.4rem;">
+      <a href="../index.html">Home</a> &middot;
+      <a href="tickets.html">Tickets</a> &middot;
+      <a href="exhibitions.html">Exhibitions</a> &middot;
+      <a href="explore.html#directions">Directions</a>
+    </p>
+  </footer>
+
+</div><!-- /container -->
+
+</body>
+</html>

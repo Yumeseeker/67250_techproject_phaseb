@@ -1,0 +1,397 @@
+/* MonoMuse Tea Museum — Stylesheet (Increment 3)
+   Scope: global type/color system, nav, footer, table, form */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
+
+/* Custom properties */
+:root {
+  --color-deep-forest: #2D3B2A;
+  --color-moss:        #4A6741;
+  --color-sage:        #7A9E6E;
+  --color-mist:        #B8CCB0;
+  --color-cream:       #F5F0E8;
+  --color-warm-white:  #FAF7F2;
+  --color-clay:        #7B5C3E;
+  --color-gold:        #C4973A;
+  --color-charcoal:    #1E1E1A;
+
+  --bg:          var(--color-warm-white);
+  --surface:     var(--color-cream);
+  --text:        var(--color-charcoal);
+  --text-muted:  var(--color-clay);
+  --accent:      var(--color-moss);
+  --accent-dark: var(--color-deep-forest);
+  --nav-bg:      var(--color-deep-forest);
+  --nav-text:    var(--color-warm-white);
+  --border:      var(--color-mist);
+
+  --ff-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ff-sans:  'Jost', system-ui, -apple-system, Helvetica, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+/* Heading hierarchy */
+h1, h2 {
+  font-family: var(--ff-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-deep-forest);
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+h3 {
+  font-family: var(--ff-sans);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+  margin-bottom: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+h4 {
+  font-family: var(--ff-sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.35rem, 3vw, 2rem); }
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+li { margin-bottom: 0.25rem; }
+
+/* Header */
+header {
+  background-color: var(--nav-bg);
+  padding: 1rem 2rem;
+}
+
+#logo {
+  width: clamp(120px, 15vw, 200px);
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin-left: -12px;
+}
+
+.logo-text {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--color-warm-white);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.logo-text em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.logo-tagline {
+  display: block;
+  font-family: var(--ff-sans);
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+  margin-top: 0.2rem;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-family: var(--ff-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 1.1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+  color: var(--color-mist);
+  text-decoration: none;
+  border-bottom-color: var(--color-sage);
+}
+
+nav a.active {
+  color: var(--color-mist);
+  border-bottom-color: var(--color-gold);
+}
+
+/* Tickets CTA in nav */
+nav a.nav-cta {
+  background-color: var(--color-moss);
+  color: var(--color-warm-white);
+  border-radius: 3px;
+  margin-left: 0.75rem;
+  border-bottom-color: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  transition: background 0.2s;
+}
+
+nav a.nav-cta:hover {
+  background-color: var(--color-deep-forest);
+  color: var(--color-warm-white);
+}
+
+/* Main content area */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--nav-bg);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 1.75rem 2rem;
+  text-align: center;
+  color: rgba(184,204,176,0.65);
+  font-family: var(--ff-sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: rgba(184,204,176,0.65);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-mist);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--ff-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+thead th {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #EBE5D9;
+}
+
+tbody tr:hover {
+  background-color: #E5DDD0;
+}
+
+tfoot td {
+  padding: 0.875rem 1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 300;
+  border-top: 1px solid var(--border);
+}
+
+/* Forms */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  font-family: var(--ff-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+  color: var(--color-moss);
+}
+
+form input,
+form select {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.875rem;
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--color-warm-white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-height: 44px;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--color-moss);
+  box-shadow: 0 0 0 3px rgba(74,103,65,0.1);
+}
+
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: var(--color-deep-forest);
+  color: var(--color-warm-white);
+  border: none;
+  border-radius: 3px;
+  font-family: var(--ff-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--color-moss);
+}
+
+/* CTA buttons and links */
+a.cta,
+.btn {
+  display: inline-block;
+  background-color: var(--color-deep-forest);
+  color: var(--color-warm-white);
+  text-decoration: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 3px;
+  font-family: var(--ff-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background 0.2s;
+  min-height: 44px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+a.cta:hover,
+.btn:hover {
+  background-color: var(--color-moss);
+  text-decoration: none;
+  color: var(--color-warm-white);
+}
+
+/* Visitor Info */
+.info-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Exhibition article blocks */
+article {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+article:last-of-type {
+  border-bottom: none;
+}
+
+article img {
+  margin-bottom: 0.75rem;
+  border-radius: 3px;
+}

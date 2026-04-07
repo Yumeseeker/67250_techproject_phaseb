@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Brian Zhang">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <img src="../static/monomuselogo.png" alt="MonoMuse Museum Logo" id="logo">
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Tickets</a>
+            <a id="navselected" href="checkout.html" class="cta" style="margin-left:0.5rem;">Buy Tickets</a>
+        </nav>
+    </header>
+    <main class="main">
+        <h1>Checkout</h1>
+        <p>Purchase your tickets online. Fields marked with * are required.</p>
+        <form>
+            <label for="name">Name: *</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email: *</label>
+            <input type="email" id="email" name="email" required>
+            <label for="quantity">Ticket Quantity: *</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+            <button type="submit">Submit Payment</button>
+        </form>
+    </main>
+    <footer>
+        <p>2026 MonoMuse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

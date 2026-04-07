@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Brian Zhang">
+  <meta name="keywords" content="MonoMuse, tea museum, tickets, pricing, hours, plan your visit">
+  <meta name="description" content="Plan your visit to MonoMuse Tea Museum — admission pricing, hours of operation, and upcoming events.">
+  <title>MonoMuse Tea Museum — Plan Your Visit</title>
+
+  <!-- Google Fonts: Cormorant Garamond + Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../static/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="../index.html" aria-label="MonoMuse Tea Museum — home">
+      <img id="logo" src="../static/images/new-tea-logo.png" alt="MonoMuse Tea Museum Logo">
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav_bar" aria-label="Main navigation">
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="tickets.html">Tickets</a>
+      <a href="checkout.html" class="nav-cta">Buy Tickets</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn"
+            aria-controls="nav-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <h1 style="margin-bottom: 0.5rem;">Plan Your Visit</h1>
+    <p style="color: var(--color-clay); margin-bottom: 2.5rem;">
+      All tickets include same-day access to all current exhibitions, the permanent collection,
+      and the tasting rooms. Special exhibitions may require a supplemental ticket.
+    </p>
+
+    <!-- TICKET PRICING TABLE -->
+    <section aria-label="Ticket pricing" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Admission Pricing</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Visitor Type</th>
+              <th scope="col">Details</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>General Admission (Adult)</strong></td>
+              <td>Standard admission for adults</td>
+              <td>$18</td>
+            </tr>
+            <tr>
+              <td><strong>Student</strong></td>
+              <td>Valid student ID required at entry</td>
+              <td>$10</td>
+            </tr>
+            <tr>
+              <td><strong>Youth (ages 5&ndash;17)</strong></td>
+              <td>Must be accompanied by a paying adult</td>
+              <td>$8</td>
+            </tr>
+            <tr>
+              <td><strong>Children (under 5)</strong></td>
+              <td>Free with a paying adult</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td><strong>Seniors (65+)</strong></td>
+              <td>Photo ID required at entry</td>
+              <td>$12</td>
+            </tr>
+            <tr>
+              <td><strong>Members</strong></td>
+              <td>Free admission — all tiers. Membership card required.</td>
+              <td>Free</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">
+                Online purchase guarantees entry on busy weekends — we recommend it.
+                Groups of 10+ contact <a href="mailto:groups@monomuse.org">groups@monomuse.org</a>.
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- HOURS OF OPERATION -->
+    <section aria-label="Museum hours" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Hours of Operation</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Hours</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Monday</strong></td>
+              <td>Closed</td>
+              <td>Museum closed to the public</td>
+            </tr>
+            <tr>
+              <td>Tuesday &ndash; Friday</td>
+              <td>10:00 am &ndash; 6:00 pm</td>
+              <td>Last entry at 5:15 pm</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>9:00 am &ndash; 8:00 pm</td>
+              <td>Extended evening; last entry at 7:15 pm</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>10:00 am &ndash; 5:00 pm</td>
+              <td>Last entry at 4:15 pm</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">
+                Last entry is 45 minutes before closing. The Tea Bar closes 30 minutes before
+                the museum. Holiday hours may vary.
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS (Apr–May 2026) -->
+    <section aria-label="Upcoming events and programming" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Upcoming Events</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Event</th>
+              <th scope="col">Time</th>
+              <th scope="col">Included With</th>
+              <th scope="col">Reserve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Apr 11, 2026</td>
+              <td>Members Night: Rare Teas Preview</td>
+              <td>6:00 &ndash; 9:00 pm</td>
+              <td>Garden, Reserve &amp; Patron members</td>
+              <td><button class="btn-row-buy" data-date="Apr 11, 2026" type="button">Buy Now</button></td>
+            </tr>
+            <tr>
+              <td>Apr 12, 2026</td>
+              <td>Family Day: Tea Around the World</td>
+              <td>10:00 am &ndash; 5:00 pm</td>
+              <td>General admission (children under 5 free)</td>
+              <td><button class="btn-row-buy" data-date="Apr 12, 2026" type="button">Buy Now</button></td>
+            </tr>
+            <tr>
+              <td>Apr 18, 2026</td>
+              <td>Tea Tasting Workshop: Spring Greens</td>
+              <td>2:00 &ndash; 4:00 pm</td>
+              <td>General admission + $12 materials fee</td>
+              <td><button class="btn-row-buy" data-date="Apr 18, 2026" type="button">Buy Now</button></td>
+            </tr>
+            <tr>
+              <td>Apr 25, 2026</td>
+              <td>Curator Talk: The Silk Road &amp; Tea Trade</td>
+              <td>6:30 pm</td>
+              <td>General admission</td>
+              <td><button class="btn-row-buy" data-date="Apr 25, 2026" type="button">Buy Now</button></td>
+            </tr>
+            <tr>
+              <td>May 3, 2026</td>
+              <td>Opening: <em>Ceremony</em> Exhibition</td>
+              <td>10:00 am &ndash; 8:00 pm</td>
+              <td>General admission</td>
+              <td><button class="btn-row-buy" data-date="May 3, 2026" type="button">Buy Now</button></td>
+            </tr>
+            <tr>
+              <td>May 16, 2026</td>
+              <td>Tea &amp; Wellness Workshop</td>
+              <td>2:00 &ndash; 4:00 pm</td>
+              <td>General admission + $15 materials fee</td>
+              <td><button class="btn-row-buy" data-date="May 16, 2026" type="button">Buy Now</button></td>
+            </tr>
+            <tr>
+              <td>May 24, 2026</td>
+              <td>Member Appreciation Day</td>
+              <td>10:00 am &ndash; 5:00 pm</td>
+              <td>Members (all tiers, free)</td>
+              <td><button class="btn-row-buy" data-date="May 24, 2026" type="button">Buy Now</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PURCHASE FORM (revealed by "Buy Tickets Online" or row Buy Now buttons) -->
+    <section aria-label="Buy tickets" style="margin-bottom: 2rem; text-align: center;">
+      <div class="section-heading">
+        <h2>Ready to Visit?</h2>
+        <div class="divider"></div>
+      </div>
+      <p style="color: var(--color-clay); margin-bottom: 1.5rem; font-weight: 300;">
+        Purchasing in advance takes about two minutes and guarantees your entry —
+        especially useful for weekends and new exhibition openings.
+      </p>
+      <button class="btn btn-primary" id="buy-now-btn" aria-controls="purchase-reveal">
+        Buy Tickets Online
+      </button>
+
+      <!-- Form hidden until the button above (or a row Buy Now) is clicked -->
+      <div id="purchase-reveal" style="display: none; margin-top: 2rem; text-align: left; max-width: 480px; margin-left: auto; margin-right: auto;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 2rem;">
+          <h3 style="margin-bottom: 1.25rem;">Purchase Tickets</h3>
+          <p style="color: var(--color-clay); margin-bottom: 1.5rem; font-size: 0.9rem; font-weight: 300;">
+            Fill in the details below. All fields marked * are required.
+          </p>
+
+          <form id="ticket-purchase-form">
+            <label for="purchase-name">Name *</label>
+            <input type="text" id="purchase-name" name="name" required>
+
+            <label for="purchase-email">Email *</label>
+            <input type="email" id="purchase-email" name="email" required>
+
+            <label for="purchase-type">Ticket Type *</label>
+            <select id="purchase-type" name="ticket-type" required>
+              <option value="">-- Select a type --</option>
+              <option value="general">General Admission &mdash; $18</option>
+              <option value="student">Student &mdash; $10</option>
+              <option value="member">Member &mdash; Free</option>
+            </select>
+
+            <label for="purchase-quantity">Number of Tickets *</label>
+            <input type="number" id="purchase-quantity" name="quantity" min="1" max="10" required>
+
+            <label for="purchase-date">Visit Date *</label>
+            <select id="purchase-date" name="date" required>
+              <option value="">-- Select a date --</option>
+              <option value="Apr 11, 2026">Apr 11, 2026</option>
+              <option value="Apr 12, 2026">Apr 12, 2026</option>
+              <option value="Apr 18, 2026">Apr 18, 2026</option>
+              <option value="Apr 25, 2026">Apr 25, 2026</option>
+              <option value="May 3, 2026">May 3, 2026</option>
+              <option value="May 16, 2026">May 16, 2026</option>
+              <option value="May 24, 2026">May 24, 2026</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Purchase Tickets</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="copyYear"></p>
+    <p style="margin-top: 0.4rem;">
+      <a href="../index.html">Home</a> &middot;
+      <a href="exhibitions.html">Exhibitions</a> &middot;
+      <a href="explore.html">About</a> &middot;
+      <a href="explore.html#directions">Directions</a>
+    </p>
+  </footer>
+
+</div><!-- /container -->
+
+</body>
+</html>

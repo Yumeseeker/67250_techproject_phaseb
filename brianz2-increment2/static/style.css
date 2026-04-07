@@ -1,0 +1,312 @@
+/* MonoMuse Tea Museum Stylesheet (Increment 2)
+   CSS Foundation: typography, color system, nav, footer,
+   tables, forms. No JavaScript-driven layout yet.
+   Fonts: Cormorant Garamond (display) + Jost (body/UI)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
+
+/* Custom CSS Properties */
+:root {
+  --color-deep-forest: #2D3B2A;
+  --color-moss:        #4A6741;
+  --color-sage:        #7A9E6E;
+  --color-mist:        #B8CCB0;
+  --color-cream:       #F5F0E8;
+  --color-warm-white:  #FAF7F2;
+  --color-clay:        #7B5C3E;
+  --color-gold:        #C4973A;
+  --color-charcoal:    #1E1E1A;
+
+  --ff-serif: 'Cormorant Garamond', Georgia, serif;
+  --ff-sans:  'Jost', system-ui, sans-serif;
+
+  --max-w:  1100px;
+  --gutter: 1.5rem;
+}
+
+/* Reset Styles */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Base Styles */
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-warm-white);
+  color: var(--color-charcoal);
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--color-moss); text-decoration: none; }
+a:hover { color: var(--color-deep-forest); text-decoration: underline; }
+
+/* Headings */
+h1, h2 {
+  font-family: var(--ff-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-deep-forest);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-family: var(--ff-sans);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-family: var(--ff-sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.35rem, 3vw, 2rem); }
+
+p { margin-bottom: 0.75rem; }
+p:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+li { margin-bottom: 0.25rem; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-mist);
+  margin: 2rem 0;
+}
+
+/* Header Styling */
+.header {
+  background-color: var(--color-deep-forest);
+  padding: 1rem var(--gutter);
+}
+
+.header a { text-decoration: none; }
+
+.logo-text {
+  font-family: var(--ff-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-warm-white);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.logo-text em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.logo-tagline {
+  display: block;
+  font-family: var(--ff-sans);
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+  margin-top: 0.2rem;
+}
+
+/* Navigation Bar */
+.nav_bar {
+  background-color: var(--color-deep-forest);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 0 var(--gutter);
+}
+
+.nav-links a {
+  display: inline-block;
+  color: var(--color-warm-white);
+  text-decoration: none;
+  font-family: var(--ff-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.875rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--color-mist);
+  text-decoration: none;
+  border-bottom-color: var(--color-sage);
+}
+
+/* Active nav state — set manually per page in this increment */
+.nav-links a.active {
+  color: var(--color-mist);
+  border-bottom-color: var(--color-gold);
+}
+
+/* Buy Tickets nav link */
+.nav-links a.nav-cta {
+  background-color: var(--color-moss);
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  border-bottom-color: transparent;
+}
+
+.nav-links a.nav-cta:hover {
+  background-color: #3d5636;
+  color: var(--color-warm-white);
+}
+
+/* Main Content Area */
+.main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2.5rem var(--gutter);
+}
+
+/* Article Components (exhibition entries) */
+article {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+article img {
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+/* Table Styling */
+.table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+
+table { border-collapse: collapse; width: 100%; font-weight: 300; }
+
+thead th {
+  background-color: var(--color-deep-forest);
+  color: var(--color-warm-white);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-mist);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) { background-color: #EBE5D9; }
+tbody tr:hover { background-color: #E3DDD1; }
+
+tfoot td {
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  color: var(--color-clay);
+  font-size: 0.85rem;
+  font-weight: 300;
+  border-top: 1px solid var(--color-mist);
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  font-family: var(--ff-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+.form-group input,
+.form-group select {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.35rem;
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-charcoal);
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-mist);
+  border-radius: 3px;
+  min-height: 44px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-moss);
+  box-shadow: 0 0 0 3px rgba(74,103,65,0.1);
+}
+
+.form-group input[type="checkbox"] {
+  display: inline;
+  width: auto;
+  min-height: auto;
+  margin-right: 0.5rem;
+  accent-color: var(--color-moss);
+}
+
+button[type="submit"] {
+  background-color: var(--color-deep-forest);
+  color: var(--color-warm-white);
+  font-family: var(--ff-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-moss);
+}
+
+/* Footer Area */
+.footer {
+  background-color: var(--color-deep-forest);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 1.75rem var(--gutter);
+  color: rgba(184,204,176,0.65);
+  font-family: var(--ff-sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+.footer a { color: rgba(184,204,176,0.65); text-decoration: none; }
+.footer a:hover { color: var(--color-mist); }
+.footer p + p { margin-top: 0.4rem; }

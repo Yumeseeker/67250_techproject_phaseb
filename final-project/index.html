@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Brian Zhang">
+  <meta name="keywords" content="tea museum, MonoMuse, Pittsburgh, world tea, exhibitions, history of tea">
+  <meta name="description" content="MonoMuse Tea Museum — a world museum dedicated to the history, culture, ceremony, and science of tea. Located in Pittsburgh, PA.">
+  <title>MonoMuse Tea Museum — Home</title>
+
+  <!-- Google Fonts: Cormorant Garamond (display) + Jost (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- jQuery 3.7.1 — MIT License — https://jquery.com
+       Used for: Read More / Read Less toggle on this page -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./static/style.css">
+  <script src="./static/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" aria-label="MonoMuse Tea Museum — home">
+      <img id="logo" src="./static/images/new-tea-logo.png" alt="MonoMuse Tea Museum Logo">
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav_bar" aria-label="Main navigation">
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="views/explore.html">Explore</a>
+      <a href="views/exhibitions.html">Exhibitions</a>
+      <a href="views/tickets.html">Tickets</a>
+      <a href="views/checkout.html" class="nav-cta">Buy Tickets</a>
+    </div>
+    <button type="button" class="hamburger" id="hamburger-btn"
+            aria-controls="nav-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Welcome banner">
+      <h1>The Whole World in a Cup</h1>
+      <p>Every civilization on earth has a tea story. MonoMuse is a museum built around that
+         simple, staggering fact — and the single leaf that made it possible.</p>
+      <a href="views/tickets.html" class="btn btn-outline">Plan Your Visit</a>
+      &nbsp;
+      <a href="views/exhibitions.html" class="btn btn-outline">Explore Exhibitions</a>
+    </section>
+
+    <!-- GREETING + INTRO (time-based greeting via JS) -->
+    <section class="intro-block" aria-label="Museum introduction">
+      <h2 id="greeting">Welcome to MonoMuse Tea Museum</h2>
+
+      <p id="shortIntro">
+        <em>Camellia sinensis</em> — one leaf — wound its way through six continents,
+        ten thousand years of history, and the daily rituals of four billion people.
+        We think that deserves more than a Wikipedia page.
+      </p>
+
+      <!-- Long intro hidden by default; toggled by jQuery Read More / Read Less -->
+      <p id="longIntro">
+        Spread across three floors and more than 8,000 square feet in the heart of Pittsburgh,
+        MonoMuse presents the global story of tea through permanent collections, rotating
+        exhibitions, immersive tasting rooms, a research library, and a working tea bar where
+        you can drink your way through the curriculum.
+        <br><br>
+        Whether you're a lifelong tea enthusiast, a curious first-time visitor, or somewhere
+        in between — there's a cup here that will change the way you think about what's in it.
+      </p>
+
+      <button type="button" class="toggle-btn" id="readMore" aria-expanded="false" aria-controls="longIntro">
+        Read More &darr;
+      </button>
+      <button type="button" class="toggle-btn" id="readLess" aria-expanded="false" aria-controls="longIntro">
+        Read Less &uarr;
+      </button>
+    </section>
+
+    <!-- VISITOR INFO CARDS -->
+    <section aria-label="Visitor information" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Plan Your Visit</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Hours</h3>
+          <p>Tue &ndash; Fri: 10 AM &ndash; 6 PM<br>
+             Saturday: 9 AM &ndash; 8 PM<br>
+             Sunday: 10 AM &ndash; 5 PM<br>
+             <strong>Monday: Closed</strong></p>
+          <p style="font-size: 0.82rem; color: var(--color-clay); margin-top: 0.5rem;">
+            Last entry 45 min before closing.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Admission</h3>
+          <p>General: $18<br>
+             Student (valid ID): $10<br>
+             Youth (5&ndash;17): $8<br>
+             Under 5 &amp; Members: Free</p>
+        </div>
+        <div class="info-card">
+          <h3>Location</h3>
+          <p>142 Meridian Street<br>
+             Pittsburgh, PA 15222<br>
+             Cultural District<br>
+             <a href="views/explore.html#directions">Directions &amp; Map &rarr;</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Contact</h3>
+          <p>hello@monomuse.org<br>
+             groups@monomuse.org<br>
+             <a href="views/explore.html">About Us &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED EXHIBITIONS -->
+    <section aria-label="Featured exhibitions" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Current Exhibitions</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <img class="card-img"
+               src="./static/images/sen_no_rikyu.jpg"
+               alt="Portrait and historical context image for Sen no Rikyu"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta"><span class="badge badge-green">On Now</span>&ensp;Through Sept 14</p>
+            <h3><em>Leaf, Steam, Ceremony</em></h3>
+            <p>The Japanese tea tradition — from Tang Dynasty imports to the formalization of
+               <em>chado</em> under Sen no Rikyu. Features a full-scale replica wabi-cha tearoom.</p>
+            <a href="views/exhibitions.html" class="btn btn-primary" style="margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1.1rem;">
+              View Exhibition
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img"
+               src="./static/images/puer.jpg"
+               alt="Aged Pu-erh tea cakes displayed in archive"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta"><span class="badge badge-dark">On Now</span>&ensp;Through Nov 2</p>
+            <h3><em>The Pu-erh Files</em></h3>
+            <p>Yunnan's living teas — the only tea that improves with age. Compare flavor profiles
+               across 5-, 15-, and 30-year-old cakes in our climate-controlled archive.</p>
+            <a href="views/exhibitions.html" class="btn btn-primary" style="margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1.1rem;">
+              View Exhibition
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img"
+               src="./static/images/chai.jpg"
+               alt="Chai preparation and street tea culture"
+               loading="lazy">
+          <div class="card-body">
+            <p class="card-meta"><span class="badge badge-gold">On Now</span>&ensp;Through Dec 7</p>
+            <h3><em>Chai Nation</em></h3>
+            <p>Tea and identity on the Indian subcontinent — from the British colonial project
+               to the chai wallahs who made the beverage their own. Includes a working chai station.</p>
+            <a href="views/exhibitions.html" class="btn btn-primary" style="margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1.1rem;">
+              View Exhibition
+            </a>
+          </div>
+        </article>
+
+      </div>
+      <div style="text-align: center;">
+        <a href="views/exhibitions.html" class="btn btn-dark">All Exhibitions</a>
+      </div>
+    </section>
+
+    <!-- GALLERY / SLIDESHOW -->
+    <section aria-label="Gallery highlights" style="margin-bottom: 3rem;">
+      <div class="section-heading">
+        <h2>Gallery Highlights</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="gallery-container" id="gallery" role="region" aria-label="Image slideshow — use arrow keys or buttons to navigate">
+        <div class="gallery-slides">
+          <div class="slide active">
+            <img src="./static/images/wabi-cha.jpg"
+                 alt="Wabi-cha tea room interior for Leaf, Steam, Ceremony"
+                 loading="lazy">
+            <p class="slide-caption"><em>Leaf, Steam, Ceremony</em> &mdash; Gallery A, Floor 1</p>
+          </div>
+          <div class="slide">
+            <img src="./static/images/chinese-puer.jpg"
+                 alt="Chinese Pu-erh tea cakes and archive display"
+                 loading="lazy">
+            <p class="slide-caption"><em>The Pu-erh Files</em> &mdash; Gallery B, Floor 2</p>
+          </div>
+          <div class="slide">
+            <img src="./static/images/chai-make.jpg"
+                 alt="Chai being prepared in a traditional tea service"
+                 loading="lazy">
+            <p class="slide-caption"><em>Chai Nation</em> &mdash; Gallery C, Floor 2</p>
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <button type="button" id="prevSlide" aria-label="Previous slide">&#8592;</button>
+          <span id="slideIndicator" aria-live="polite">1 / 3</span>
+          <button type="button" id="nextSlide" aria-label="Next slide">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP / DONATION -->
+    <section class="membership-section" aria-label="Membership and donation">
+      <h2>Become a Part of MonoMuse</h2>
+      <p>Museums are only as alive as the communities that sustain them. A MonoMuse membership
+         means free entry every day we're open, early access to every new exhibition, and the
+         knowledge that you're helping keep one of the more unusual and necessary institutions
+         in this city running.</p>
+      <a href="views/explore.html#membership" class="btn btn-gold">Join as a Member</a>
+      &nbsp;
+      <a href="views/explore.html#membership" class="btn btn-outline">Make a Donation</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="copyYear"></p>
+    <p style="margin-top: 0.4rem;">
+      <a href="views/explore.html">About</a> &middot;
+      <a href="views/tickets.html">Tickets</a> &middot;
+      <a href="views/exhibitions.html">Exhibitions</a> &middot;
+      <a href="views/explore.html#directions">Directions</a>
+    </p>
+  </footer>
+
+</div><!-- /container -->
+
+</body>
+</html>
